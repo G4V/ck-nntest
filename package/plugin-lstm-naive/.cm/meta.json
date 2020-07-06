@@ -1,0 +1,29 @@
+{
+  "customize": {
+    "extra_dir": "",
+    "version": "0.1",
+    "plugin_name": "naive_lstm.py",
+    "model_name": "lstm",
+    "impl_name": "naive"
+  },
+  "deps": {
+    "python": {
+      "add_to_path": "yes",
+      "force_target_as_host": "yes",
+      "local": "yes",
+      "name": "Python interpreter",
+      "sort": 70,
+      "tags": "compiler,python"
+    }
+  }, 
+  "end_full_path_universal": "plugins/naive_lstm.py",
+  "process_script": "process",
+  "soft_uoa": "fee21442c93c5180",
+  "suggested_path": "nntest-plugins-lstm-naive",
+  "tags": [
+    "nntest",
+    "plugin",
+    "lstm",
+    "naive"
+  ]
+}

@@ -58,7 +58,16 @@ class PluginLstmRnntDec(torch.nn.Module):
             h_0 = self.zeros_h_0
             c_0 = self.zeros_c_0
 
+        print("pyin %f %f %f" % (xin[0][0][0], xin[0][0][1], xin[0][0][2]))
+        print("pyh %f %f %f" % (h_0[0][0][0], h_0[0][0][1], h_0[0][0][2]))
+        print("pyc %f %f %f" % (c_0[0][0][0], c_0[0][0][1], c_0[0][0][2]))
         res = self.session.run([self.output, self.h_n, self.c_n], {self.input: xin, self.h_0: h_0, self.c_0: c_0})
+        print("opy %f %f %f" % (res[0][0][0][0], res[0][0][0][1], res[0][0][0][2]))
+        print("opyh %f %f %f" % (res[1][0][0][0], res[1][0][0][1], res[1][0][0][2]))
+        print("opyc %f %f %f" % (res[2][0][0][0], res[2][0][0][1], res[2][0][0][2]))
+        print("\n\n\n")
+
+#        res = self.session.run([self.output, self.h_n, self.c_n], {self.input: xin, self.h_0: h_0, self.c_0: c_0})
 
         result = torch.from_numpy(res[0])
         h_n = torch.from_numpy(res[1])
